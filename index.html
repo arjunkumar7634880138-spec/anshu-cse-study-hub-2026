@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anshu's Exam Preparation Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brand-mark">A</div><div><b>ANSHU'S</b><small>EXAM PREP HUB</small></div></div>
+    <div class="profile-mini"><div class="avatar" id="profileAvatar">AR</div><div><b id="profileName">Anshu Raj Thakur</b><small>CSE · 1st Semester</small></div></div>
+    <nav>
+      <button class="nav-link active" data-page="dashboard">▦ <span>Dashboard</span></button>
+      <button class="nav-link" data-page="syllabus">▤ <span>My Syllabus</span></button>
+      <button class="nav-link" data-page="schedule">◷ <span>Daily Schedule</span></button>
+      <button class="nav-link" data-page="classroutine">▦ <span>CSE Class Routine</span></button>
+      <button class="nav-link" data-page="routine">▣ <span>Exam Routine</span></button>
+      <button class="nav-link" data-page="tracker">✓ <span>Revision Tracker</span></button>
+      <button class="nav-link" data-page="notes">✎ <span>My Notes</span></button>
+      <button class="nav-link" data-page="settings">⚙ <span>Settings</span></button>
+    </nav>
+    <div class="sidebar-bottom"><span class="live-dot"></span> Your personal study space</div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="menu-btn" id="menuBtn">☰</button>
+      <div><div class="eyebrow">GOVERNMENT POLYTECHNIC SHEIKHPURA</div><h1 id="pageTitle">Dashboard</h1></div>
+      <div class="top-actions"><span class="date-chip" id="todayDate"></span><button class="theme-btn" id="themeBtn" title="Toggle theme">◐</button></div>
+    </header>
+
+    <section class="page active" id="page-dashboard">
+      <div class="welcome-row">
+        <div><p class="eyebrow">YOUR EXAM JOURNEY</p><h2>Keep moving forward, <span id="welcomeName">Anshu</span>. <span>✦</span></h2><p class="muted">Small daily progress creates big results.</p></div>
+        <div class="welcome-tools"><div class="semester-tag">SESSION 2026–29 <b>·</b> CSE</div><form class="name-quick-form" id="quickNameForm"><input id="quickStudentName" type="text" maxlength="50" placeholder="Enter student name" aria-label="Student name"><button class="primary-btn" type="submit">Show my name</button></form></div>
+      </div>
+      <div class="countdown-card">
+        <div><span class="count-label">THEORY EXAM STARTS IN</span><div class="count-number"><strong id="daysLeft">--</strong><span>DAYS</span></div><p>7 December 2026 <span class="count-dot">●</span> Theory examination</p></div>
+        <div class="count-side"><div class="count-icon">⌛</div><span>Stay consistent.<br>You've got this!</span></div>
+      </div>
+      <div class="stats-grid">
+        <article class="stat-card"><div class="stat-top"><span>Overall preparation</span><i>◉</i></div><div class="stat-value" id="overallPct">0%</div><div class="progress"><span id="overallBar"></span></div><small id="overallDetail">0 of 0 topics completed</small></article>
+        <article class="stat-card"><div class="stat-top"><span>Topics completed</span><i>✓</i></div><div class="stat-value" id="completedCount">0</div><small>Across all available subjects</small></article>
+        <article class="stat-card"><div class="stat-top"><span>Today's targets</span><i>◎</i></div><div class="stat-value" id="todayDone">0/0</div><small>Tasks marked complete today</small></article>
+        <article class="stat-card"><div class="stat-top"><span>Study streak</span><i>♨</i></div><div class="stat-value" id="streak">0 <small>days</small></div><small>Keep your daily momentum</small></article>
+      </div>
+      <div class="content-grid">
+        <article class="panel"><div class="panel-heading"><div><p class="eyebrow">YOUR SUBJECTS</p><h3>Preparation overview</h3></div><button class="text-btn" data-goto="syllabus">View syllabus →</button></div><div id="subjectProgress" class="subject-progress"></div></article>
+        <article class="panel"><div class="panel-heading"><div><p class="eyebrow">FOCUS FOR TODAY</p><h3>Today's study targets</h3></div><button class="text-btn" data-goto="schedule">Manage →</button></div><div id="todayPreview" class="today-preview"></div></article>
+      </div>
+      <div class="bottom-grid">
+        <article class="panel tip-panel"><div class="tip-icon">✦</div><div><p class="eyebrow">A QUICK REMINDER</p><h3>Understand → Practise → Revise</h3><p class="muted">Mark a topic complete only after you can explain it or solve a question without looking at your notes.</p></div></article>
+        <article class="panel quick-panel"><div><p class="eyebrow">QUICK ACTIONS</p><h3>What would you like to do?</h3></div><div class="quick-actions"><button data-goto="syllabus">＋ Update syllabus</button><button data-goto="schedule">＋ Add study task</button><button data-goto="routine">View exam routine</button></div></article>
+      </div>
+    </section>
+
+    <section class="page" id="page-syllabus">
+      <div class="section-intro"><div><p class="eyebrow">YOUR COMPLETE COURSE OUTLINE</p><h2>Subjects & Unit Checklist</h2><p class="muted">Tick topics as you finish them. Your progress saves automatically in this browser.</p></div><div class="total-pill" id="syllabusTotal">0% complete</div></div>
+      <div class="subject-tabs" id="subjectTabs"></div>
+      <div class="panel syllabus-panel"><div class="panel-heading"><div><p class="eyebrow" id="subjectCode">SUBJECT</p><h3 id="subjectTitle">Select a subject</h3></div><button class="outline-btn" id="viewSyllabusImage">View original syllabus image ↗</button></div><div id="unitList"></div></div>
+      <div class="notice">ICT syllabus is not uploaded yet. You can add it later from Settings when you have the syllabus image or topics.</div>
+    </section>
+
+    <section class="page" id="page-schedule">
+      <div class="section-intro"><div><p class="eyebrow">PLAN YOUR DAY</p><h2>Daily Study Schedule</h2><p class="muted">Create realistic tasks around your college hours and mark them done.</p></div><button class="primary-btn" id="addTaskBtn">＋ Add task</button></div>
+      <div class="schedule-date panel"><div><b id="scheduleDateLabel">Today's plan</b><small>Change the date to plan another day.</small></div><input type="date" id="scheduleDate"></div>
+      <div class="panel"><div class="panel-heading"><h3>Study tasks</h3><span class="total-pill" id="scheduleProgress">0 / 0 done</span></div><div id="taskList" class="task-list"></div></div>
+    </section>
+
+    <section class="page" id="page-classroutine">
+      <div class="section-intro"><div><p class="eyebrow">GOVERNMENT POLYTECHNIC SHEIKHPURA</p><h2>CSE 1st Semester – Class Routine</h2><p class="muted">Weekly classroom and laboratory timetable. Timings and subjects are transcribed from the timetable image you shared.</p></div><span class="total-pill">CSE · 1ST SEM · 2026</span></div>
+      <div class="panel routine-legend"><b>Class timings</b><div class="period-times"><span>Period 1 · 10:00–11:00</span><span>Period 2 · 11:00–12:00</span><span>Period 3 · 12:00–1:00</span><span>Period 4 · 2:00–3:00</span><span>Period 5 · 3:00–4:00</span><span>Period 6 · 4:00–5:00</span></div></div>
+      <div class="panel timetable-wrap"><div class="table-scroll"><table class="class-timetable"><thead><tr><th>Day</th><th>Branch</th><th>Period 1<br><small>10–11 AM</small></th><th>Period 2<br><small>11–12 PM</small></th><th>Period 3<br><small>12–1 PM</small></th><th>Period 4<br><small>2–3 PM</small></th><th>Period 5<br><small>3–4 PM</small></th><th>Period 6<br><small>4–5 PM</small></th></tr></thead><tbody>
+      <tr><th>Monday</th><td>CSE</td><td>FEEE</td><td>AI Lab</td><td>AI Lab</td><td>Applied Physics-B</td><td>FEEE Lab</td><td>FEEE Lab</td></tr>
+      <tr><th>Tuesday</th><td>CSE</td><td>AI</td><td>AI Lab</td><td>AI Lab</td><td>BEM</td><td>FEEE Lab</td><td>FEEE Lab</td></tr>
+      <tr><th>Wednesday</th><td>CSE</td><td>FEEE</td><td>Indian Constitution</td><td>Open Educational Resources</td><td>ICT Tools</td><td>ICT Tools</td><td>BEM</td></tr>
+      <tr><th>Thursday</th><td>CSE</td><td>FEEE</td><td>Applied Physics-B Lab</td><td>Applied Physics-B Lab</td><td>Applied Physics-B Lab</td><td>—</td><td>—</td></tr>
+      <tr><th>Friday</th><td>CSE</td><td>AI</td><td>Library</td><td>BEM</td><td>Applied Physics-B Lab</td><td>Electrical &amp; Electronic Workshop</td><td>Electrical &amp; Electronic Workshop</td></tr>
+      <tr><th>Saturday</th><td>CSE</td><td>AI</td><td>ICT Tools</td><td>ICT Tools</td><td>Tutorial</td><td>Electrical &amp; Electronic Workshop</td><td>Electrical &amp; Electronic Workshop</td></tr>
+      </tbody></table></div><p class="muted routine-note">BEM = Basic Engineering Mathematics · AI = Artificial Intelligence · FEEE = Fundamentals of Electrical &amp; Electronic Engineering. Handwritten entries in the source image have been interpreted as ICT Tools / BEM; please verify them with your class teacher.</p></div>
+      <div class="panel routine-image-panel"><h3>Original timetable image</h3><img src="assets/cse-class-routine.jpg" alt="Original CSE first semester weekly class timetable"></div>
+    </section>
+
+    <section class="page" id="page-routine">
+      <div class="section-intro"><div><p class="eyebrow">IMPORTANT EXAM DATES</p><h2>Exam Routine & Notices</h2><p class="muted">Your uploaded routine is kept here for quick reference.</p></div><span class="total-pill">DECEMBER 2026</span></div>
+      <div class="panel routine-image-panel"><img src="assets/exam-routine.jpg" alt="Uploaded examination routine"></div>
+      <div class="panel"><div class="panel-heading"><h3>Key dates at a glance</h3><span class="muted">As shown in your uploaded notice</span></div><div class="date-list">
+        <div><b>23–27 Nov 2026</b><span>Online Internal Marks Entry</span></div><div><b>24–28 Nov 2026</b><span>Online Fee Payment</span></div><div><b>24–29 Nov 2026</b><span>Online Exam Form Fill-up</span></div><div><b>30 Nov 2026</b><span>Exam Form Verification</span></div><div><b>02 Dec 2026</b><span>Admit Card Download</span></div><div><b>05 Dec 2026</b><span>Centre: attendance sheet / admit card list / OMR details</span></div><div class="highlight-date"><b>07–17 Dec 2026</b><span>Theory Examination</span></div><div><b>09–13 Dec 2026</b><span>External Practical Evaluation Scheduling</span></div><div><b>18–22 Dec 2026</b><span>Practical Exam (Home Centre)</span></div>
+      </div></div>
+    </section>
+
+    <section class="page" id="page-tracker">
+      <div class="section-intro"><div><p class="eyebrow">REVISE SMARTER</p><h2>Revision Tracker</h2><p class="muted">Record revision rounds after completing a topic.</p></div></div>
+      <div class="panel"><div class="panel-heading"><h3>Revision summary</h3><span class="total-pill" id="revisionTotal">0 revisions</span></div><div id="revisionList"></div></div>
+    </section>
+
+    <section class="page" id="page-notes">
+      <div class="section-intro"><div><p class="eyebrow">YOUR PERSONAL NOTES</p><h2>Notes & Important Points</h2><p class="muted">Save quick reminders, formulas, doubts and important questions.</p></div><button class="primary-btn" id="addNoteBtn">＋ Add note</button></div>
+      <div id="notesList" class="notes-grid"></div>
+    </section>
+
+    <section class="page" id="page-settings">
+      <div class="section-intro"><div><p class="eyebrow">PERSONALIZE YOUR HUB</p><h2>Settings & Data</h2><p class="muted">Manage your exam date and keep a backup of your progress.</p></div></div>
+      <div class="panel settings-panel"><label>Exam start date<input type="date" id="examDateInput" value="2026-12-07"></label><label>Your name (each student can enter their own name)<input type="text" id="studentName" value="Anshu Raj Thakur" maxlength="50" placeholder="Enter your name"></label><div class="settings-actions"><button class="primary-btn" id="saveSettings">Save settings</button><button class="outline-btn" id="exportData">Export backup (JSON)</button><label class="file-btn">Import backup<input type="file" id="importData" accept=".json"></label><button class="danger-btn" id="resetData">Reset progress</button></div><p class="muted small">Your name and study progress are saved in this browser. Each student should use their own browser/device profile. Cloud sync between devices requires a separate login and database setup.</p></div>
+      <div class="panel"><h3>Uploaded syllabus files</h3><div class="file-links"><a href="assets/maths-syllabus.jpg" target="_blank">Mathematics syllabus ↗</a><a href="assets/physics-syllabus.jpg" target="_blank">Applied Physics-B syllabus ↗</a><a href="assets/feee-syllabus.jpg" target="_blank">FEEE syllabus ↗</a><a href="assets/ai-syllabus.jpg" target="_blank">AI syllabus ↗</a><a href="assets/exam-routine.jpg" target="_blank">Exam routine ↗</a></div></div>
+    </section>
+    <footer>ANSHU'S EXAM PREPARATION HUB <span>·</span> Built for your 1st Semester journey</footer>
+  </main>
+</div>
+
+<div class="modal-backdrop" id="modal"><div class="modal"><button class="modal-close" id="modalClose">×</button><div id="modalContent"></div></div></div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body></html>
